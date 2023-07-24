@@ -1,14 +1,16 @@
 // ==UserScript==
 // @name         Twitter new logo
 // @namespace    http://tampermonkey.net/
-// @version      0.1
-// @description  try to take over the world!
-// @author       You
+// @version      0.2
+// @description  Change twitter logo & name
+// @author       YuryScript
 // @match        *://*.twitter.com/*
 // @match        *://x.com/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=twitter.com
 // @grant        none
 // ==/UserScript==
+
+const yourTwitterName = "ерня";
 
 (function () {
   "use strict";
@@ -23,9 +25,7 @@ function changeLogo() {
   if (wrapper === null) requestAnimationFrame(changeLogo);
 
   const name = document.createElement("div");
-  name.innerText = "УЕТА";
-  name.innerText = "уйня";
-  name.innerText = "ерня";
+  name.innerText = yourTwitterName;
 
   wrapper.style["flex-flow"] = "row";
 
