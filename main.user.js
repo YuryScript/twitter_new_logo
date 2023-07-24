@@ -1,11 +1,11 @@
 // ==UserScript==
 // @name         Twitter new logo
 // @namespace    http://tampermonkey.net/
-// @version      0.3
+// @version      0.4
 // @description  Change twitter logo & name
 // @author       YuryScript
 // @match        *://*.twitter.com/*
-// @match        *://x.com/*
+// @match        *://*.x.com/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=twitter.com
 // @updateURL        https://github.com/YuryScript/twitter_new_logo/blob/master/main.user.js
 // @downloadURL      https://github.com/YuryScript/twitter_new_logo/blob/master/main.user.js
@@ -23,9 +23,7 @@ const yourTwitterName = "ерня";
 })();
 
 function changeLogo() {
-  const wrapper = document.querySelector(
-    "#react-root > div > div > div.css-1dbjc4n.r-18u37iz.r-13qz1uu.r-417010 > header > div > div > div > div.css-1dbjc4n.r-1habvwh > div.css-1dbjc4n.r-dnmrzs.r-1vvnge1 > h1 > a"
-  );
+  const wrapper = document.querySelector("#react-root > div > div > div > header > div > div > div > div > div > h1 > a");
 
   if (wrapper === null) requestAnimationFrame(changeLogo);
 
@@ -36,14 +34,10 @@ function changeLogo() {
 
   name.style["color"] = "white";
   name.style["font-size"] = "40px";
-  name.style["line-height"] = "50px";
-  name.style["font-family"] =
-    '"TwitterChirp",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif';
-  name.style["margin-left"] = "-7px";
+  name.style["font-family"] = '"TwitterChirp",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif';
+  name.style["margin-left"] = "-8px";
 
-  const logo = document.querySelector(
-    "#react-root > div > div > div.css-1dbjc4n.r-18u37iz.r-13qz1uu.r-417010 > header > div > div > div > div.css-1dbjc4n.r-1habvwh > div.css-1dbjc4n.r-dnmrzs.r-1vvnge1 > h1 > a > div"
-  );
+  const logo = wrapper.querySelector("a > div");
   logo.style["min-hight"] = "52px";
   logo.style["min-width"] = "52px";
 
