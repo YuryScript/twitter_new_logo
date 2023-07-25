@@ -1,14 +1,14 @@
 // ==UserScript==
 // @name         Twitter new logo
 // @namespace    http://tampermonkey.net/
-// @version      0.4
+// @version      0.5
 // @description  Change twitter logo & name
 // @author       YuryScript
 // @match        *://*.twitter.com/*
 // @match        *://*.x.com/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=twitter.com
-// @updateURL        https://github.com/YuryScript/twitter_new_logo/blob/master/main.user.js
-// @downloadURL      https://github.com/YuryScript/twitter_new_logo/blob/master/main.user.js
+// @updateURL        https://github.com/YuryScript/twitter_new_logo/raw/master/main.user.js
+// @downloadURL      https://github.com/YuryScript/twitter_new_logo/raw/master/main.user.js
 // @supportURL       https://github.com/YuryScript/twitter_new_logo/issues
 // @homepageURL      https://github.com/YuryScript/twitter_new_logo
 // @grant            GM_getResourceText
@@ -35,7 +35,7 @@ function changeLogo() {
   name.style["color"] = "white";
   name.style["font-size"] = "40px";
   name.style["font-family"] = '"TwitterChirp",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif';
-  name.style["margin-left"] = "-8px";
+  name.style["transform"] = "translateX(-8px)";
 
   const logo = wrapper.querySelector("a > div");
   logo.style["min-hight"] = "52px";
